@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+      }
+      .home {
+        width: 100vw;
+        height: 608px;
+        background-image: url(/bg.png);
+        display: flex;
+        flex-direction: column;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 19px;
+        color: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        align-items: center;
+        background-position: center top;
+      }
+      body {
+        margin: 0px;
+      }
+      .nav {
+        width: 87vw;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+      }
+      .ham_line {
+        width: 16px;
+        height: 2px;
+        background-color: white;
+      }
+      .home_nav_hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        height: 24px;
+        width: 24px;
+        justify-content: center;
+        align-items: center;
+      }
+      .home_body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 89vw;
+        height: 100%;
+      }
+      .home_body_content {
+        width: 89vw;
+        height: 284px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .home_body_title {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37px;
+        color: #ffffff;
+      }
+      .home_body_text {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16.3px;
+        line-height: 18px;
+
+        color: #ffffff;
+      }
+      .home_body_button {
+        width: 199px;
+        height: 53px;
+
+        background: #10f1bb;
+        border-radius: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .home_button_text {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: #0f1b18;
+      }
+      .about {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 812.67px;
+        background: #f0f4f5;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+      }
+      .about_title {
+        width: 100vw;
+        height: 37px;
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 37px;
+        text-align: center;
+        color: #040b34;
+      }
+      .about_text {
+        width: 84.6vw;
+        height: 546px;
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        /* or 162% */
+
+        text-align: center;
+
+        color: #4a4e65;
+      }
+      .line {
+        width: 60px;
+        height: 3px;
+        background-color: #351b7a;
+      }
+      .main {
+        width: 100vw;
+        height: 638px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        justify-content: center;
+      }
+      .main_img {
+        background-image: url(/Rectangle\ 4.png);
+        width: 349px;
+        height: 260.5px;
+        border-radius: 32px;
+      }
+      .main_img1 {
+        background-image: url(/respo.png.png);
+        width: 349px;
+        height: 260.5px;
+        border-radius: 32px;
+      }
+      .main_title {
+        width: 89.5vw;
+        height: 111px;
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 37px;
+        color: #040b34;
+      }
+      .main_text {
+        width: 89.5vw;
+        height: 130px;
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #4a4e65;
+      }
+      .main_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 156px;
+        height: 46px;
+        background: #351b7a;
+        border-radius: 48px;
+        justify-content: center;
+        gap: 6px;
+      }
+      .main_button_text {
+        height: 18px;
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: #ffffff;
+      }
+      .main_content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      .main_all {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        gap: 60px;
+      }
+      .solution {
+        width: 100vw;
+        height: 1598.13px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+        background-color: #f0f4f5;
+      }
+      .solu_content {
+        width: 330px;
+        height: 293.17px;
+        background: #ffffff;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .solu_bag {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .s_img {
+        width: 62.58px;
+        height: 59.82px;
+      }
+      .s_img1 {
+        width: 62.58px;
+        height: 59.82px;
+      }
+      .s_img2 {
+        width: 62.58px;
+        height: 59.82px;
+      }
+      .s_title {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 30px;
+        text-align: center;
+        color: #040b34;
+      }
+      .s_text {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        text-align: center;
+        color: #4a4e65;
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 469px;
+        background-color: rgb(243, 243, 243);
+        gap: 50px;
+      }
+      .footer_zuun {
+        width: 84.6%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+      .footer_baruun {
+        width: 84.6%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: flex-start;
+      }
+      .footer_title {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37px;
+        color: #040b34;
+      }
+      .footer_text {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: justify;
+        color: rgba(4, 11, 52, 0.5);
+      }
+      .footer_icons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+      }
+      .insta {
+        width: 24px;
+        height: 24px;
+      }
+      .facebook {
+        width: 24px;
+      }
+      .twitter {
+        width: 24px;
+      }
+      .follow {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        text-align: justify;
+        color: #040b34;
+      }
+      .footer_button {
+        height: 46px;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+      }
+      .footer_buttonx {
+        width: 146.9px;
+        height: 46px;
+        left: 183.1px;
+        top: 229px;
+        background: #351b7a;
+        border-radius: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+      input {
+        outline: black;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+        width: 51%;
+      }
+      ::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+      }
+      .footerx2 {
+        font-family: "Arial";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+        text-align: justify;
+        color: rgba(4, 11, 52, 0.3);
+      }
+      .footer_c {
+        width: 84.6vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="home">
+        <div class="nav">
+          <div class="home_nav_title">Navbar Brand</div>
+          <div class="home_nav_hamburger">
+            <div class="ham_line"></div>
+            <div class="ham_line"></div>
+            <div class="ham_line"></div>
+          </div>
+        </div>
+        <div class="home_body">
+          <div class="home_body_content">
+            <div class="home_body_title">
+              We serve clients with ground breaking solutions
+            </div>
+            <div class="home_body_text">
+              Predictive Chat’s SMS Technology combines Human and Artificial
+              Intelligence to save you time and energy while generating new
+              business.
+            </div>
+            <div class="home_body_button">
+              <div class="home_button_text">Schedule a Demo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="about_title">About us</div>
+        <div class="line"></div>
+        <div class="about_text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec euismod
+          gravida nulla rhoncus dictum. Malesuada rutrum facilisis non gravida
+          dolor velit, metus, elementum. Aenean in pharetra vitae condimentum.
+          In vel augue duis mattis sit pharetra sem. Euismod vitae arcu viverra
+          quam aliquam sagittis ultrices. Cursus imperdiet enim erat tempus,
+          odio urna sed pharetra volutpat. Dis vel amet id nunc, aenean nisl.
+          Mauris gravida adipiscing at pellentesque non quisque urna, malesuada
+          diam. Tristique lacus sollicitudin laoreet ac tempus donec feugiat.
+          Nisl ut elit egestas senectus. Auctor pellentesque rutrum pulvinar
+          diam diam eu nibh nec. Dapibus lobortis sit enim est ac odio pulvinar
+          mus ut. Egestas vel enim commodo pretium elit lectus orci massa
+          adipiscing. In nulla ipsum leo scelerisque volutpat, vestibulum id
+          arcu lobortis. Adipiscing viverra in lorem.
+        </div>
+      </div>
+      <div class="main_all">
+        <div class="main">
+          <div style="width: 89.5%"><div class="main_img"></div></div>
+          <div class="main_content">
+            <div class="main_title">
+              We serve clients with ground breaking solutions
+            </div>
+            <div style="width: 89.5vw"><div class="line"></div></div>
+            <div class="main_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec
+              euismod gravida nulla rhoncus dictum. Malesuada rutrum facilisis
+              non gravida dolor velit, metus, elementum. Aenean in pharetra
+              vitae condimentum.
+            </div>
+            <div style="width: 89.5vw">
+              <div class="main_button">
+                <div class="main_button_text">Read more</div>
+                <div><img src="/Group.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div style="width: 89.5%"><div class="main_img1"></div></div>
+          <div class="main_content">
+            <div class="main_title">
+              We serve clients with ground breaking solutions
+            </div>
+            <div style="width: 89.5vw"><div class="line"></div></div>
+            <div class="main_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec
+              euismod gravida nulla rhoncus dictum. Malesuada rutrum facilisis
+              non gravida dolor velit, metus, elementum. Aenean in pharetra
+              vitae condimentum.
+            </div>
+            <div style="width: 89.5vw">
+              <div class="main_button">
+                <div class="main_button_text">Read more</div>
+                <div><img src="/Group.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div style="width: 89.5%"><div class="main_img1"></div></div>
+          <div class="main_content">
+            <div class="main_title">
+              We serve clients with ground breaking solutions
+            </div>
+            <div style="width: 89.5vw"><div class="line"></div></div>
+            <div class="main_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec
+              euismod gravida nulla rhoncus dictum. Malesuada rutrum facilisis
+              non gravida dolor velit, metus, elementum. Aenean in pharetra
+              vitae condimentum.
+            </div>
+            <div style="width: 89.5vw">
+              <div class="main_button">
+                <div class="main_button_text">Read more</div>
+                <div><img src="/Group.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="solution">
+        <div class="about_title">Our solution</div>
+        <div class="line"></div>
+        <div class="solu_bag">
+          <div class="solu_content">
+            <div class="s_img">
+              <img style="width: 100%" src="/13.png.png" alt="" />
+            </div>
+            <div class="s_title">Convert</div>
+            <div class="s_text">
+              Start running campaigns and reach and convert old/cold leai
+              likeaap back never before.
+            </div>
+          </div>
+          <div class="solu_content">
+            <div class="s_img">
+              <img style="width: 100%" src="/13.png.png" alt="" />
+            </div>
+            <div class="s_title">Convert</div>
+            <div class="s_text">
+              Start running campaigns and reach and convert old/cold leai
+              likeaap back never before.
+            </div>
+          </div>
+        </div>
+        <div class="solu_bag">
+          <div class="solu_content">
+            <div class="s_img1">
+              <img style="width: 100%" src="/11.png" alt="" />
+            </div>
+            <div class="s_title">Connect</div>
+            <div class="s_text">
+              Schedule a demo to see how simple it is to implement Predictive
+              Chat into your lead prospecting
+            </div>
+          </div>
+          <div class="solu_content">
+            <div class="s_img2">
+              <img style="width: 100%" src="/12.png" alt="" />
+            </div>
+            <div class="s_title">Customize</div>
+            <div class="s_text">
+              After you sign-up our developers will fine-tune your bots to fit
+              your business and messaging needs.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer_zuun">
+          <div class="footer_title">Pinecone</div>
+          <div class="footer_text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat
+            tempus sed morbi amet enim tristique velit, at semper. At sed.
+          </div>
+        </div>
+        <div class="footer_baruun">
+          <div class="footer_icons">
+            <div class="follow">Follow us</div>
+            <div class="icons">
+              <div class="insta">
+                <img src="/Vector.png" alt="" />
+              </div>
+              <div class="facebook">
+                <img style="width: 40%" src="/Vector (1).png" alt="" />
+              </div>
+              <div class="twitter">
+                <img src="/Vector (2).png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="footer_button">
+            <input type="text" placeholder="Your Email address" />
+            <div class="footer_buttonx">
+              <div class="main_button_text">Subscribe</div>
+              <div>
+                <img style="margin-bottom: -4px" src="/Group.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_c">
+          <div class="footerx2">Copyright © 2022. All right reserved</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
